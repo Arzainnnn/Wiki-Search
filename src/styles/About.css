@@ -1,0 +1,13 @@
+.aboutspan {
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 16px;
+  margin-left: 20px;
+  color: #ffff;
+  width: 140px;
+}
+
+.AboutHeader {
+  background: #27659a;
+  height: 78px;
+}

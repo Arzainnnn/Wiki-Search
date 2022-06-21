@@ -1,0 +1,32 @@
+a {
+  color: #697582;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #697582;
+  text-decoration: none;
+
+}
+
+.gobackheader {
+  background: #27659a;
+}
+
+.pagedata {
+  color: #697582;
+  font-size: 14px;
+  padding: 20px;
+}
+
+
+.gobackheader {
+  color: #ffffff;
+  padding: 10px;
+}
+.Titles{
+  font-size: 19px;
+  width: 300px;
+  margin-left: 120x;
+  margin-top: 6px;
+}
