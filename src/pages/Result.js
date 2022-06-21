@@ -29,7 +29,6 @@ export const Result = () => {
       </div>
 
       <p className="pagedata">{pageRes}</p>
-    
     </>
   );
 };

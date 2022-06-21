@@ -1,12 +1,14 @@
-import React from "react";
-export const Form = (props) => {
+import React, { forwardRef } from "react";
+export const Form = forwardRef((props, ref) => {
+  console.log(ref.current);
   return (
     <form onSubmit={props.response}>
       <div className="finder">
         <input
           className="search-Box"
           placeholder="Search Article..."
-          onKeyDown={(e) => props.handlevalue(e.target.value)}
+          // onKeyDown={(e) => props.handlevalue(e.target.value)}
+          ref={ref}
           type="text"
         />
         <button className="buttonz  btn-sm " type="submit">
@@ -24,4 +26,4 @@ export const Form = (props) => {
       </div>
     </form>
   );
-};
+});

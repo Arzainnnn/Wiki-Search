@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Form } from "../components/Form";
 import { Nodata } from "../components/Nodata";
@@ -8,7 +8,7 @@ import "../styles/NavBar.css";
 export const Home = () => {
   const location = useLocation();
   const [searchResults, setSearchResults] = useState(null);
-  const [searchvalue, setsearchvalue] = useState("");
+  const searchvalue = useRef(null);
   useEffect(() => {
     if (location?.state?.searchResults) {
       setSearchResults(location.state.searchResults);
@@ -16,22 +16,22 @@ export const Home = () => {
   }, []);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (searchvalue === "") {
+    if (searchvalue.current.value === "") {
       setSearchResults(null);
       return;
     }
+
     let searchRes = await fetch(
-      `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchvalue}`
+      `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchvalue.current.value}`
     );
     searchRes = await searchRes.json();
     searchRes = searchRes.query.search;
-    console.log("searchRes", searchRes);
     setSearchResults(searchRes);
   };
 
   return (
     <>
-      <Form response={handleFormSubmit} handlevalue={setsearchvalue} />
+      <Form response={handleFormSubmit} ref={searchvalue} />
 
       <table className="table table-hover tableheader">
         <thead>
@@ -49,6 +49,7 @@ export const Home = () => {
               return (
                 <tr key={k}>
                   <td>{item.title}</td>
+                  {console.log(typeof item.title)}
                   <td className="content">
                     <Link
                       to={`/detail/${item.pageid}/${item.title}/`}

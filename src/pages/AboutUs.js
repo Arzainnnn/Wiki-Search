@@ -7,8 +7,7 @@ export const AboutUs = () => {
 
   return (
     <>
-   
-      <Header/>
+      <Header />
       <p className="pagedata">
         Wikipedia is an encyclopedia that anyone can edit and millions already
         have. Wikipedia's purpose is to benefit readers by acting as a widely
