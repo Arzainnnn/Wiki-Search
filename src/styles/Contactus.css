@@ -1,9 +1,21 @@
   .ContactHeader {
     background: #27659a;
-    padding: 15px;
   }
 
   .contactspan {
     color: #ffffff;
     font-size: 19px;
+    border: 2px solid red;
+  }
+
+  .Conts {
+    width: 100vw;
+    background: #27659a;
+    padding: 29px;
+    height: 60px;
+  }
+
+  .spancontact {
+    margin-top: 70px;
+    color: #ffffff;
   }

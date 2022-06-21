@@ -3,10 +3,11 @@ import "../styles/About.css";
 import { Header } from "../components/Header";
 
 export const AboutUs = () => {
-  // const location = useLocation();
-
   return (
     <>
+      <div className="Abots">
+        <span className="spanabout">About Us</span>
+      </div>
       <Header />
       <p className="pagedata">
         Wikipedia is an encyclopedia that anyone can edit and millions already

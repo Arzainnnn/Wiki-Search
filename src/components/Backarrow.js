@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/Backarrow.css';
+import "../styles/Backarrow.css";
 
 export const Backarrow = () => {
   return (
@@ -10,7 +10,7 @@ export const Backarrow = () => {
         className="svg"
         data-icon="arrow-left"
         width="2em"
-        height="1.5em"
+        height="1.8em"
         fill="currentColor"
         aria-hidden="true"
       >

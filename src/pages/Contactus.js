@@ -8,7 +8,10 @@ export const Contactus = () => {
   // const location = useLocation();
 
   return (
-    <div>
+    <>
+      <div className="Conts">
+        <span className="spancontact">Contact Us</span>
+      </div>
       <Header />
       <p className="pagedata">
         Thank you for your interest in contacting Wikipedia. Before proceeding,
@@ -30,6 +33,6 @@ export const Contactus = () => {
         refrain from emailing about disagreements with content; they will not be
         resolved via email.
       </p>
-    </div>
+    </>
   );
 };

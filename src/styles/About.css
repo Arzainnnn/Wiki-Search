@@ -1,13 +1,11 @@
-.aboutspan {
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 16px;
-  margin-left: 20px;
-  color: #ffff;
-  width: 140px;
+.Abots {
+  width: 100vw;
+  background: #27659a;
+  padding: 29px;
+  height: 60px;
 }
 
-.AboutHeader {
-  background: #27659a;
-  height: 78px;
+.spanabout {
+  margin-top: 70px;
+  color: #ffffff;
 }
