@@ -1,5 +1,6 @@
 import { AboutUs } from "./AboutUs";
 import { Contactus } from "./Contactus";
+import { ErrorPage } from "./ErrorPage";
 import { Home } from "./Home";
 import { Result } from "./Result";
 
@@ -21,4 +22,16 @@ export const InternalRoutes = [
     path: "/Contactus",
     element: <Contactus />,
   },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
 ];
+// {
+//   path: "/:pages",
+//   element: <AboutUs />,
+// },
+// {
+//   path: "/:pages",
+//   element: <Contactus />,
+// },

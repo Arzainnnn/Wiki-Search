@@ -1,0 +1,12 @@
+.Errormsg{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.erroricon{
+    color: red;
+}
+.errorcolor{
+    color: rgba(255, 0, 0, 0.448);
+}

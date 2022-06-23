@@ -5,10 +5,10 @@ import { Header } from "../components/Header";
 export const AboutUs = () => {
   return (
     <>
-      <div className="Abots">
+      {/* <div className="Abots">
         <span className="spanabout">About Us</span>
-      </div>
-      <Header />
+      </div> */}
+      <Header title={'About us'}/>
       <p className="pagedata">
         Wikipedia is an encyclopedia that anyone can edit and millions already
         have. Wikipedia's purpose is to benefit readers by acting as a widely

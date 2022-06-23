@@ -7,8 +7,8 @@ export const Nodata = () => {
         <div className="Nodata">
           <svg
             className="nosearch"
-            width="94"
-            height="40"
+            width="90"
+            height="35"
             viewBox="0 0 64 41"
             xmlns="http://www.w3.org/2000/svg"
           >

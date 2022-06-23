@@ -10,7 +10,7 @@ export const Backarrow = () => {
         className="svg"
         data-icon="arrow-left"
         width="2em"
-        height="1.8em"
+        height="1.5em"
         fill="currentColor"
         aria-hidden="true"
       >

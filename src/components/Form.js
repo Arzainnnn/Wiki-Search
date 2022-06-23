@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 export const Form = forwardRef((props, ref) => {
-  console.log(ref.current);
   return (
     <form onSubmit={props.response}>
       <div className="finder">

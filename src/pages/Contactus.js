@@ -1,18 +1,25 @@
 import React from "react";
-// import { useLocation, Link } from "react-router-dom";
-// import { Backarrow } from "../components/Backarrow";
 import "../styles/Contactus.css";
 import { Header } from "../components/Header";
+import { Queryform } from "../components/Queryform";
+import { useState } from "react";
 
 export const Contactus = () => {
-  // const location = useLocation();
+  const [submittedData, setSubmittedData] = useState({});
+
+  const storeSubmittedData = (kkey, value) => {
+    setSubmittedData({ ...submittedData, [kkey]: value });
+  };
+
+  const handlequery = (event) => {
+    event.preventDefault();
+    alert("You have submitted the Query Will get back to you soon.");
+    console.log(submittedData);
+  };
 
   return (
     <>
-      <div className="Conts">
-        <span className="spancontact">Contact Us</span>
-      </div>
-      <Header />
+      <Header title={'Contact us'}/>
       <p className="pagedata">
         Thank you for your interest in contacting Wikipedia. Before proceeding,
         some important disclaimers: Wikipedia has no central editorial board.
@@ -33,6 +40,11 @@ export const Contactus = () => {
         refrain from emailing about disagreements with content; they will not be
         resolved via email.
       </p>
+      <hr />
+      <Queryform
+        queryresp={handlequery}
+        handleDataChange={storeSubmittedData}
+      />
     </>
   );
 };
