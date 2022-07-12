@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Backarrow.css";
+import "../../styles/Backarrow.css";
 
 export const Backarrow = () => {
   return (

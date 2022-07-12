@@ -1,12 +1,10 @@
-.Header {
-    padding: 8px;
-    background: #27659a;
-
-    align-items: center;
+.Allheader {
+    color: #ffffff;
+    background-color: #27659a;
+    padding: 33px;
+    height: 95px;
 }
 
-.routings {
-    color: #ffffff;
-    margin-top: 18px;
+.titling {
     font-size: 19px;
 }

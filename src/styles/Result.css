@@ -9,25 +9,22 @@ a:hover {
 
 }
 
-.gobackheader {
-  background: #27659a;
-}
-
 .pagedata {
   color: #697582;
-  font-size: 14px;
-  padding: 20px;
+  font-size: 13px;
+  padding: 40px;
 }
-
 
 .gobackheader {
   color: #ffffff;
-  padding: 25px;
+  padding: 20px;
   height: 90px;
 }
-.Titles{
+
+.Titles {
   font-size: 19px;
-  width: 300px;
-  margin-left: 120x;
-  margin-top: 6px;
+}
+
+.spinner {
+  margin-top: 60px;
 }

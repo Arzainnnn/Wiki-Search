@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/Queryform.css";
+import "../../styles/Queryform.css";
 
 export const Queryform = (props) => {
   return (
-    <div>
-      <form onSubmit={props.queryresp} className="Queryfrm">
+    <>
+      <form onSubmit={props.queryresponseHandler} className="query-form">
         <div className="form-row  div-wrapper d-flex justify-content-center align-items-center">
           <div className="col-md-3 mb-3">
             <label htmlFor="validationServer01">First name</label>
@@ -34,9 +34,9 @@ export const Queryform = (props) => {
               placeholder="Last name"
               required
             />
-            <div></div>
           </div>
         </div>
+
         <div className="form-row  div-wrapper d-flex justify-content-center align-items-center">
           <div className="col-md-3 mb-3">
             <label htmlFor="validationServerUsername">Email</label>
@@ -51,6 +51,7 @@ export const Queryform = (props) => {
               placeholder="Email"
             />
           </div>
+
           <div className="col-md-3 mb-3">
             <label htmlFor="validationServer03">Mobile Number</label>
             <input
@@ -66,41 +67,46 @@ export const Queryform = (props) => {
             />
           </div>
         </div>
-        <div className="form-row  div-wrapper d-flex justify-content-center align-items-center">
-          <div className="form-group">
-            <label htmlFor="exampleFormControlTextarea1">
-               your Query
-            </label>
+        <div>
+         
+          <div className="form-group div-wrapper d-flex justify-content-center align-items-center">
             <textarea
-              className="form-control "
-              placeholder="Please let us know your query"
-              autoComplete="off"
-              id="Query For"
+              className="form-control col-md-6"
+              placeholder="Please let us know your query.."
+              id="Query On"
               onChange={(e) =>
                 props.handleDataChange(e.target.id, e.target.value)
               }
-              rows="4"
+              rows="5"
             ></textarea>
           </div>
         </div>
-        <div className="form-group div-wrapper d-flex justify-content-center align-items-center">
+
+
+        <div className="form-group div-wrapper d-flex form-group div-wrapper d-flex justify-content-center align-items-center agrees ">
           <div className="form-check">
             <input
               className="form-check-input"
               type="checkbox"
-              id="invalidCheck3"
+              id="Agreement "
+              onChange={(e) =>
+                props.handleDataChange(e.target.id, e.target.value)
+              }
               required
             />
+
             <label className="form-check-label">
               Agree to terms and conditions
             </label>
             <div>You must agree before submitting.</div>
-            <button className="btn-primary btn-md btnsub" type="submit">
+
+            <button className="btn-primary btn-md btn-submit" type="submit">
               Submit
             </button>
+
           </div>
         </div>
       </form>
-    </div>
+    </>
   );
 };

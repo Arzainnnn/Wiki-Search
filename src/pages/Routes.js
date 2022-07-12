@@ -1,18 +1,14 @@
+import { Home } from "./Home";
 import { AboutUs } from "./AboutUs";
 import { Contactus } from "./Contactus";
-import { ErrorPage } from "./ErrorPage";
-import { Home } from "./Home";
+import { ErrorPage } from "../components/UI/ErrorPage";
 import { Result } from "./Result";
 
-// to the navigate between the pages and display them in url bar
+// TO NAVIGATE BETWEEN THE PAGES AND DISPLAY IT IN (Url-bar)..
 export const InternalRoutes = [
   {
     path: "/",
     element: <Home />,
-  },
-  {
-    path: "/detail/:pageid/:title/",
-    element: <Result />,
   },
   {
     path: "/About-Us",
@@ -23,15 +19,11 @@ export const InternalRoutes = [
     element: <Contactus />,
   },
   {
+    path: "/detail/:pageid/:title/",
+    element: <Result />,
+  },
+  {
     path: "*",
     element: <ErrorPage />,
   },
 ];
-// {
-//   path: "/:pages",
-//   element: <AboutUs />,
-// },
-// {
-//   path: "/:pages",
-//   element: <Contactus />,
-// },

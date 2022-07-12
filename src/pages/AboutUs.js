@@ -1,14 +1,12 @@
 import React from "react";
+import { Header } from "../components/UI/Header";
 import "../styles/About.css";
-import { Header } from "../components/Header";
 
 export const AboutUs = () => {
   return (
     <>
-      {/* <div className="Abots">
-        <span className="spanabout">About Us</span>
-      </div> */}
-      <Header title={'About us'}/>
+      <Header title={"About us"} />
+
       <p className="pagedata">
         Wikipedia is an encyclopedia that anyone can edit and millions already
         have. Wikipedia's purpose is to benefit readers by acting as a widely
@@ -51,6 +49,7 @@ export const AboutUs = () => {
         or vandalism. Readers who recognize this can obtain valid information
         (see Wikipedia:Researching with Wikipedia) and fix the articles.
       </p>
+      
     </>
   );
 };

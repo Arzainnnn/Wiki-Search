@@ -1,38 +1,36 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Form } from "../components/Form";
-import { Nodata } from "../components/Nodata";
+import { useRef, useContext } from "react";
+import { Link } from "react-router-dom";
+import { AppContext } from "../App";
+import { Form } from "../components/form/Form";
+import { Nodata } from "../components/UI/Nodata";
 import "../styles/Home.css";
-import "../styles/NavBar.css";
 
 export const Home = () => {
-  const location = useLocation();
-  const [searchResults, setSearchResults] = useState(null);
-  const searchvalue = useRef(null);
-  useEffect(() => {
-    if (location?.state?.searchResults) {
-      setSearchResults(location.state.searchResults);
-    }
-  }, []);
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    if (searchvalue.current.value === "") {
+  const [DataResults, setSearchResults] = useContext(AppContext); // USING GLOBAL STATE WHICH WAS CREATED IN App.js(1)
+
+  const searchvalue = useRef(null); // USING (Useref) TO FETCH THE DATA FROM THE INPUT FIELD INITIALLY T IS SET TO NULL..
+
+  const handleFormSubmit = async (event) => { // FORM HANDLER..
+    
+    event.preventDefault(); // THIS AVOIDS FORM SUBMISSION..
+    
+    if (searchvalue.current.value === "") { // IF NO DATA ENTERED IN INPUT FIELD IT RETURNS THE VALUE (null) AND FORM IS NOT BEEN SUBMITTED..
       setSearchResults(null);
       return;
     }
-
-    let searchRes = await fetch(
+    
+    let searchRes = await fetch( // FETCHING THE DATA BASED ON VALUE ENTERED IN SEARCH BOX
       `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchvalue.current.value}`
-    );
-    searchRes = await searchRes.json();
-    searchRes = searchRes.query.search;
-    setSearchResults(searchRes);
-  };
+      );
+      searchRes = await searchRes.json();
+      searchRes = searchRes.query.search;
+      setSearchResults(searchRes);
+    };
 
-  return (
-    <>
+    return ( // IT RETURNS A JSX CODE..
+
+      <>
       <Form response={handleFormSubmit} ref={searchvalue} />
-
       <table className="table table-hover tableheader">
         <thead>
           <tr>
@@ -41,21 +39,19 @@ export const Home = () => {
             <th scope="col">Posted on</th>
           </tr>
         </thead>
-        <tbody>
-          {searchResults === null ? (
-            <Nodata />
-          ) : (
-            searchResults.map((item, k) => {
-              return (
-                <tr key={k}>
+        <tbody className="tableheight">
+          {DataResults === null ? // IF THERE IS NOTHING SEARCHED RETURN (<Nodata/>) COMPONENT..
+            (<Nodata />)
+            : (
+              DataResults.map((item, k) => {  //MAPPING IS DONE HERE, FOR TITLE, DESCRIPTION, TIMESTAMP..
+                return (
+                  <tr  key={k} className="content">
                   <td>{item.title}</td>
-                  {console.log(typeof item.title)}
-                  <td className="content">
+                  <td>
                     <Link
                       to={`/detail/${item.pageid}/${item.title}/`}
-                      state={{ searchResults }}
                       dangerouslySetInnerHTML={{ __html: item.snippet }}
-                    ></Link>
+                      ></Link>
                   </td>
                   <td>
                     {item.timestamp
@@ -65,9 +61,9 @@ export const Home = () => {
                       .join("/")}
                   </td>
                 </tr>
-              );
-            })
-          )}
+                );
+              })
+              )}
         </tbody>
       </table>
     </>

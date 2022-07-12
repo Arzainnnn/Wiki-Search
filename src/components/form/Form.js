@@ -1,20 +1,22 @@
 import React, { forwardRef } from "react";
-export const Form = forwardRef((props, ref) => {
+
+export const Form = forwardRef((props, ref) => { // FROM HERE WE ARE FORWARDING ref={ref} WHICH CONTAINS VALUE..
+
   return (
     <form onSubmit={props.response}>
-      <div className="finder">
+      <div className="Allheader">
         <input
           className="search-Box"
           placeholder="Search Article..."
-          // onKeyDown={(e) => props.handlevalue(e.target.value)}
-          ref={ref}
+          
+          ref={ref}  // PLACE WHERE VALUE IS STORED..
           type="text"
-        />
-        <button className="buttonz  btn-sm " type="submit">
+        /> 
+        <button className="search-button  btn-sm " type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
-            height="14"
+            height="12"
             fill="currentColor"
             className="bi bi-search"
             viewBox="0 0 16 16"

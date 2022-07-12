@@ -1,9 +1,10 @@
 import React from "react";
+import '../../styles/Nodata.css';
 
 export const Nodata = () => {
   return (
     <tr>
-      <td>
+      <td className="svg-no-hover">
         <div className="Nodata">
           <svg
             className="nosearch"
@@ -23,7 +24,7 @@ export const Nodata = () => {
               </g>
             </g>
           </svg>
-          <p className="empty">No Data</p>
+          <p className="no-data-text">No Data</p>
         </div>
       </td>
     </tr>
