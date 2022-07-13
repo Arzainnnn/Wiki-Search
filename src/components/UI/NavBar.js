@@ -7,9 +7,9 @@ export const NavBar = () => {
   return (
     <div className="Nav-bar">
       <div className="Nav-bar-link">
-        <Link to="/">Home</Link>
-        <Link to="/About-Us">About-Us</Link>
-        <Link to="/Contactus">Contactus</Link>
+        <Link to="/" className="Nav-bar-links">Home</Link>
+        <Link to="/About-Us" className="Nav-bar-links">About-Us</Link>
+        <Link to="/Contactus" className="Nav-bar-links">Contactus</Link>
       </div>
     </div>
   );

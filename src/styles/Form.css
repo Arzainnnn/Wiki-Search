@@ -1,0 +1,34 @@
+/* .validationcheck {
+    font-size: 12px;
+    background-color: rgba(241, 178, 178, 0.789);
+    border: 1px solid red;
+    width: 95%;
+    height: 31px;
+    padding: 10px;
+}
+.validationcheck::placeholder {
+    color: #9f9f9f;
+
+}
+.validationcheck:focus{
+    outline-style: none !important;
+    outline: none !important;
+    outline: 0 !important;
+    border: 2px solid #d2282b;
+    font-size: 12px;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.errormsg {
+    width: 250px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 30px;
+    border: 1px solid #d2282b;
+    color: #d2282b;
+    background-color: #fb99999d;
+    margin-top: -58px;
+
+} */

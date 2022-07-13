@@ -1,37 +1,18 @@
-import { createContext, useReducer, useEffect, useState } from "react";
-import { useRoutes } from "react-router-dom";
-import { InternalRoutes } from "./pages/Routes";
-import RingLoader from "react-spinners/RingLoader";
-import { NavBar } from "./components/UI/NavBar";
-import { Footer } from "./components/UI/Footer";
-import "./styles/App.css";
-
-const initialState = {
-  searchResults: null,
-};
+import { createContext, useReducer } from "react"; // CALLING FROM PACKAGE
+import { useRoutes } from "react-router-dom"; // CALLING FROM PACKAGE
+import { InternalRoutes } from "./pages/Routes"; // CALLING FROM PAGES
+import { usePreLoader } from "./hooks/use-PreLoader"; // CALLING FROM HOOKS
+import { Reducer, initialState } from "./store/AppReducer"; // CALLING FROM STORE..
+import { PreLoader } from "./components/UI/PreLoader"; // CALLING FROM UI
+import { NavBar } from "./components/UI/NavBar"; // CALLING FROM UI
+import { Footer } from "./components/UI/Footer"; // CALLING FROM UI
 
 export const AppContext = createContext(initialState); // USED TO CREATE A GLOBAL STATE WHICH CAN BE USED IN ANY COMPONENTS..
 
-export const reducer = (state, action) => {
-  if (action.type === "SETSEARCHRESULTS") {
-    return {
-      ...state,
-      searchResults: action.payload,
-    };
-  }
-  return initialState;
-};
-
 export const App = () => {
-  const [searchResults, dispatch] = useReducer(reducer, initialState); // usereducer: 1) DESTRUCTING AS usestate 2) 2 ARGS FUNCTION AND INITIALSTATE..
-  const [PreLoading, setPreLoading] = useState(false); 
-
-  useEffect(() => {
-    setPreLoading(true);
-    setTimeout(() => {
-      setPreLoading(false);
-    }, 2000);
-  }, []);
+  const [searchResults, dispatch] = useReducer(Reducer, initialState); // (useReducer): 1) DESTRUCTING AS (useState) 2) 2 ARGS FUNCTION AND INITIAL-STATE..
+  
+  const PreLoading = usePreLoader(); // (PreLoading) CUSTOM HOOK..
 
   const ResultingData = (res) => {
     dispatch({ type: "SETSEARCHRESULTS", payload: res });
@@ -43,23 +24,40 @@ export const App = () => {
 
   return (
     <>
-      {PreLoading ? ( // PRELOADER IN STATRTING OF APPLICATION..
-        <div className="PreLoading">
-          <RingLoader color={"#27659a"} loading={PreLoading} size={70} />
-          <p>Loading....</p>
-        </div>
+      {PreLoading ? (
+        <PreLoader /> // (PreLoader) WHICH WAS BEEN OUT-SOURCED..
       ) : (
-
         // GETTING AND PROVIDING DATA VALUES..
         <AppContext.Provider value={DataResults}>
           <NavBar />
-          {element} 
+          {element}
           <Footer />
         </AppContext.Provider>
       )}
     </>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

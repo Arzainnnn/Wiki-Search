@@ -20,4 +20,7 @@
     display: flex;
     justify-content: space-between;
 }
+.Nav-bar-links:hover{
+    color: #000;
+}
 
