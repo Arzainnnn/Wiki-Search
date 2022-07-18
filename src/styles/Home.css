@@ -23,7 +23,7 @@
 
  .search-Box {
    width: 95%;
-   height: 31px;
+   height: 29px;
    padding: 10px;
    border-top: 2px solid #2d5e89;
    border-bottom: 2px solid #2d5e89;
@@ -41,7 +41,7 @@
 
  button:hover {
    background-color: #093860;
-   transition: 1s;
+   transition: 0.2s;
  }
 
 
@@ -49,7 +49,7 @@
    background-color: #1890ff;
    margin-top: 0px;
    border: none;
-   height: 28px;
+   height: 27.1px;
  }
 
  .search-button:hover {
@@ -79,12 +79,12 @@
 
  }
 
- td:hover {
+ .data-content:hover {
    color: rgb(102, 101, 101);
    background-color: #dff5fa;
  }
 
- .table-hover tbody .content:hover>td {
+ .table-hover tbody .content:hover>.data-content {
    background-color: #dff5fa;
    color: rgb(102, 101, 101);
 
@@ -94,7 +94,7 @@
    color: #e1dede;
    margin-left: 115%;
    display: block;
-   width: 80px;
+   width: 50px;
    font-size: 12px;
  }
 
@@ -104,6 +104,6 @@
    margin-top: 40px;
  }
 
- tr {
+ .content {
    cursor: pointer;
  }

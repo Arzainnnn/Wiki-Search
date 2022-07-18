@@ -22,9 +22,7 @@ export const Result = () => {
         let pageRes = await fetch(
           `http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&titles=${title}&origin=*&format=json`
         );
-        console.log(pageRes);
         if (!pageRes.ok) {
-          console.log("called");
           throw new Error("Something went wrong!");
         }
         pageRes = await pageRes.json();
@@ -49,7 +47,7 @@ export const Result = () => {
           <Backarrow /> {/*GO BACK TO HOME */}
         </Link>
       </div>
-      {!isLoading && error && <p>{error}</p>}
+      {!isLoading && error && <p className="error-center">{"Something went wrong!"}</p>}
       {!isLoading && !error && <p className="pagedata">{pageRes}</p>} {/*WHERE THE EXTRACTED DATA IS BEEN DISPLAYED*/}
       {isLoading && <Loading />}
     </>

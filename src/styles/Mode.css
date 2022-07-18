@@ -1,0 +1,86 @@
+#root {
+    background-color: #f0f2f5;
+}
+
+#root #dark {
+    background-color: #121212;
+}
+
+#light .Allheader {
+    background-color: #27659a;
+    color: #ffffff;
+    padding: 33px;
+    height: 95px;
+}
+
+#dark .Allheader {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 33px;
+    height: 95px;
+    box-shadow: 1px 6px 5px 0px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 1px 6px 5px 0px rgba(0,0,0,0.8);
+    -moz-box-shadow: 1px 6px 5px 0px rgba(0,0,0,0.8);
+}
+
+#dark .search-button {
+    background-color: #000000;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    height: 28.6px;
+}
+
+#dark .search-button:hover {
+    background-color: rgb(51, 51, 51);
+
+}
+
+#dark .search-Box {
+    width: 95%;
+    height: 28.2px;
+    padding: 10px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#dark .btn-submit {
+    background-color: #292929;
+    border: 2px solid #000;
+}
+#dark .btn-submit:hover {
+    background-color: #4e4e4e;
+    border: 2px solid #000;
+}
+
+
+
+.Toggler {
+    display: flex;
+    justify-content: flex-end;
+    width: 300px;
+    float: right;
+    padding: 2px 55px 4px;
+}
+
+.labelmode {
+    font-size: 11px;
+    margin-top: 4.6px;
+    padding: 0px 10px;
+}
+
+#dark .labelmode {
+    color: #fff;
+    font-size: 11px;
+    margin-top: 4.6px;
+    padding: 0px 10px;
+}
+#dark .footer{
+    color: #fff;
+    background-color: #121212;
+    border-top: 1px solid #fff;
+}

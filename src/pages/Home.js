@@ -4,6 +4,7 @@ import { AppContext } from "../App";
 import { Form } from "../components/form/Form";
 import { Nodata } from "../components/UI/Nodata";
 import "../styles/Home.css";
+import '../styles/Header.css';
 
 export const Home = () => {
   const [DataResults, setSearchResults] = useContext(AppContext); // USING GLOBAL STATE WHICH WAS CREATED IN App.js(1)
@@ -43,7 +44,7 @@ export const Home = () => {
       />
       <table className="table table-hover tableheader">
         <thead>
-          <tr>
+          <tr className="headerrow">
             <th scope="col">Title</th>
             <th scope="col">Description</th>
             <th scope="col">Posted on</th>
@@ -52,19 +53,19 @@ export const Home = () => {
         <tbody className="tableheight">
           {DataResults === null ? ( // IF THERE IS NOTHING SEARCHED RETURN (<Nodata/>) COMPONENT..
             <Nodata />
-          ) : (
-            DataResults.map((item, k) => {
-              // MAPPING IS DONE HERE, FOR TITLE, DESCRIPTION, TIMESTAMP..
-              return (
+            ) : (
+              DataResults.map((item, k) => {
+                // MAPPING IS DONE HERE, FOR TITLE, DESCRIPTION, TIMESTAMP..
+                return (
                 <tr key={k} className="content">
-                  <td>{item.title}</td>
-                  <td>
+                  <td  className="data-content">{item.title}</td>
+                  <td className="data-content">
                     <Link
                       to={`/detail/${item.pageid}/${item.title}/`}
                       dangerouslySetInnerHTML={{ __html: item.snippet }}
                     ></Link>
                   </td>
-                  <td>
+                  <td className="data-content">
                     {item.timestamp
                       .split("T")[0]
                       .split("-")

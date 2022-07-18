@@ -1,4 +1,5 @@
 import React from "react";
+import '../../styles/Mode.css';
 import "../../styles/Queryform.css";
 
 export const Queryform = (props) => {

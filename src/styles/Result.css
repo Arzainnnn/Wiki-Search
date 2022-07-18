@@ -28,3 +28,10 @@ a:hover {
 .spinner {
   margin-top: 60px;
 }
+.error-center{
+  font-size: 14px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}

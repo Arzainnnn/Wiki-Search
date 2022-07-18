@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import '../../styles/Form.css';
+import '../../styles/Mode.css';
 
 export const Form = forwardRef((props, ref) => {
   // FROM HERE WE ARE FORWARDING ref={ref} WHICH CONTAINS VALUE..
@@ -7,16 +8,17 @@ export const Form = forwardRef((props, ref) => {
   return (
     <form onSubmit={props.response}>
       <div className="Allheader">
+
         <input
           // className={ApplyValidation}
           className="search-Box"
           placeholder="Search Article..."
           ref={ref} // PLACE WHERE VALUE IS STORED..
           type="text"
-          pattern="[A-Za-z]{0,15}"
+          pattern="[A-Za-z0-9]{0,15}"
           required
           title="Please enter a valid keyword [a-z]{0,15}"
-        />
+          />
         <button className="search-button  btn-sm " type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
